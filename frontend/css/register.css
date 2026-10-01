@@ -1,144 +1,79 @@
-/* Reprendre tout le CSS de login.css, puis ajouter : */
+@import url('login.css');
 
 .register-wrapper {
-    position: relative;
-    z-index: 10;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 1150px;
-    width: 92%;
-    background: rgba(26, 26, 46, 0.78);
+    position: relative; z-index: 10;
+    display: grid; grid-template-columns: 1fr 1fr;
+    max-width: 1150px; width: 92%;
+    background: rgba(26,26,46,0.78);
     backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 25px; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
     animation: slideUp 0.8s ease;
-    margin: 40px auto;
+    margin: 80px auto 40px;
     max-height: 92vh;
 }
 
-/* Barre de progression */
+.register-info {
+    padding: 55px 45px;
+    background: linear-gradient(135deg, rgba(255,140,0,0.15), rgba(15,15,30,0.6));
+    border-right: 1px solid rgba(255,255,255,0.08);
+    display: flex; flex-direction: column; justify-content: center;
+}
+
+.register-form-container {
+    padding: 50px 45px;
+    display: flex; flex-direction: column; justify-content: center;
+    overflow-y: auto;
+}
+
 .progress-bar {
-    height: 4px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 4px;
-    margin-bottom: 25px;
-    overflow: hidden;
+    height: 4px; background: rgba(255,255,255,0.08);
+    border-radius: 4px; margin-bottom: 25px; overflow: hidden;
 }
 .progress-fill {
-    height: 100%;
-    width: 33%;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border-radius: 4px;
-    transition: width 0.4s ease;
+    height: 100%; width: 33%;
+    background: linear-gradient(90deg, #FF8C00, #FFD700);
+    border-radius: 4px; transition: width 0.4s ease;
 }
 
-/* Étapes */
-.form-step {
-    display: none;
-    border: none;
-}
-.form-step.active {
-    display: block;
-    animation: fadeInUp 0.4s ease;
-}
+.form-step { display: none; border: none; }
+.form-step.active { display: block; animation: fadeInUp 0.4s ease; }
 
-/* Select */
-.input-wrapper select {
-    width: 100%;
-    padding: 14px 20px 14px 48px;
-    background: rgba(255,255,255,0.05);
-    border: 2px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    color: var(--text);
-    font-size: 0.95rem;
-    font-family: inherit;
-    outline: none;
-    appearance: none;
-    cursor: pointer;
-}
-.input-wrapper select option { background: #1a1a2e; color: white; }
-.input-wrapper select:focus { border-color: var(--primary); }
-
-/* Strength meter */
 .strength-meter {
-    height: 5px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 4px;
-    margin-top: 8px;
-    overflow: hidden;
+    height: 5px; background: rgba(255,255,255,0.08);
+    border-radius: 4px; margin-top: 8px; overflow: hidden;
 }
-.strength-bar {
-    height: 100%;
-    width: 0;
-    border-radius: 4px;
-    transition: all 0.4s ease;
-}
-.strength-label {
-    font-size: 0.8rem;
-    margin-top: 5px;
-    display: block;
-}
+.strength-bar { height: 100%; width: 0; border-radius: 4px; transition: all 0.4s ease; }
+.strength-label { font-size: 0.8rem; margin-top: 5px; display: block; }
 
-/* Étapes gauche */
-.steps {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    margin-top: 30px;
-}
-.step {
-    display: flex;
-    gap: 15px;
-    align-items: flex-start;
-}
-.step-num {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px; height: 38px;
-    background: var(--primary);
-    color: var(--dark);
-    border-radius: 50%;
-    font-weight: 900;
-    flex-shrink: 0;
-}
-.step-text {
-    display: flex;
-    flex-direction: column;
-}
-.step-text strong { color: #fff; }
-.step-text span { color: #bbb; font-size: 0.85rem; }
-
-/* Nav */
-.form-nav {
-    display: flex;
-    gap: 12px;
-    margin-top: 20px;
-}
+.form-nav { display: flex; gap: 12px; margin-top: 20px; }
 .btn-nav {
-    flex: 1;
-    padding: 14px;
-    border: none;
-    border-radius: 12px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    flex: 1; padding: 14px; border: none; border-radius: 12px;
+    font-family: inherit; font-weight: 700; font-size: 0.95rem;
+    cursor: pointer; transition: all 0.3s ease;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 48px;
 }
-.btn-next, .btn-submit {
-    background: linear-gradient(135deg, var(--primary), #ff6b00);
-    color: white;
-    box-shadow: 0 8px 25px rgba(255,140,0,0.3);
+.btn-next, .btn-submit-auth {
+    background: linear-gradient(135deg, #FF8C00, #ff6b00);
+    color: white; box-shadow: 0 8px 25px rgba(255,140,0,0.3);
 }
 .btn-prev {
-    background: rgba(255,255,255,0.08);
-    color: #ccc;
+    background: rgba(255,255,255,0.08); color: #ccc;
     border: 1px solid rgba(255,255,255,0.15);
 }
-.btn-nav:hover { transform: translateY(-2px); }
+
+.steps { display: flex; flex-direction: column; gap: 22px; margin-top: 30px; }
+.step { display: flex; gap: 15px; align-items: flex-start; }
+.step-num {
+    display: flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; background: #FF8C00;
+    color: #0f0f1e; border-radius: 50%; font-weight: 900; flex-shrink: 0;
+}
+.step-text { display: flex; flex-direction: column; }
+.step-text strong { color: #fff; }
+.step-text span { color: #bbb; font-size: 0.85rem; }
 
 @media (max-width: 900px) {
     .register-wrapper { grid-template-columns: 1fr; max-height: 92vh; overflow-y: auto; }
