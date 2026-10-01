@@ -1,5 +1,5 @@
 // Configuration globale — modifie ici si besoin
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://ing100.onrender.com/api';
 
 // Gestion de session
 const Session = {
