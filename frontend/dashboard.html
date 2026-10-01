@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — ING10</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+    <div class="logo">
+        <span>🏗️</span>
+        <span class="logo-text">ING<span class="accent">10</span></span>
+    </div>
+
+    <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item active">
+            <span class="nav-icon">📊</span> Tableau de bord
+        </a>
+        <a href="prix.html" class="nav-item">
+            <span class="nav-icon">💰</span> Prix matériaux
+        </a>
+        <a href="devis.html" class="nav-item">
+            <span class="nav-icon">📄</span> Mes devis
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">🏗️</span> Projets
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">👥</span> Clients
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">⚙️</span> Paramètres
+        </a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="user-info">
+            <div class="avatar">JK</div>
+            <div>
+                <strong id="userName">Ing. Kamga</strong>
+                <span id="userRole">Ingénieur</span>
+            </div>
+        </div>
+        <button class="btn-logout" onclick="logout()">🚪 Déconnexion</button>
+    </div>
+</aside>
+
+<!-- ===== MAIN ===== -->
+<main class="main-content">
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <button class="burger" onclick="toggleSidebar()">☰</button>
+        <h1>Bonjour, <span class="accent" id="greetingName">Ing. Kamga</span> 👋</h1>
+        <div class="topbar-actions">
+            <span class="badge-ville" id="badgeVille">📍 Douala</span>
+            <button class="btn-icon">🔔</button>
+        </div>
+    </header>
+
+    <!-- Stats -->
+    <section class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">📄</div>
+            <div>
+                <h3 id="totalDevis">0</h3>
+                <p>Devis créés</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🏗️</div>
+            <div>
+                <h3 id="totalProjets">0</h3>
+                <p>Projets en cours</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">💰</div>
+            <div>
+                <h3><span id="totalMontant">0</span> <small>FCFA</small></h3>
+                <p>Montant total estimé</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🏘️</div>
+            <div>
+                <h3 id="totalClients">0</h3>
+                <p>Clients actifs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actions rapides -->
+    <section class="quick-actions">
+        <h2>Actions rapides</h2>
+        <div class="actions-grid">
+            <a href="devis.html" class="action-card primary">
+                <span class="action-icon">➕</span>
+                <h4>Nouveau devis</h4>
+                <p>Créer une estimation complète</p>
+            </a>
+            <a href="prix.html" class="action-card">
+                <span class="action-icon">🔍</span>
+                <h4>Chercher un prix</h4>
+                <p>Matériaux, MO, équipements</p>
+            </a>
+            <a href="#" class="action-card">
+                <span class="action-icon">📐</span>
+                <h4>Calculateur métré</h4>
+                <p>Quantités automatiques</p>
+            </a>
+            <a href="#" class="action-card">
+                <span class="action-icon">📥</span>
+                <h4>Exporter un devis</h4>
+                <p>Format PDF / Excel</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Projets récents -->
+    <section class="recent">
+        <div class="section-header">
+            <h2>Projets récents</h2>
+            <a href="#" class="link-see-all">Voir tout →</a>
+        </div>
+        <div class="projets-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Projet</th>
+                        <th>Localité</th>
+                        <th>Type</th>
+                        <th>Surface</th>
+                        <th>Statut</th>
+                        <th>Montant</th>
+                    </tr>
+                </thead>
+                <tbody id="projetsBody">
+                    <!-- Rempli en JS -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion — ING10</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== FOND ANIMÉ ===== -->
+    <div class="bg-container">
+        <div class="bg-overlay"></div>
+        <div class="floating-icons">
+            <span>🏗️</span>
+            <span>🧱</span>
+            <span>🔩</span>
+            <span>📐</span>
+            <span>🏢</span>
+            <span>⚙️</span>
+        </div>
+    </div>
+
+    <!-- ===== BOUTON RETOUR ===== -->
+    <a href="index.html" class="back-home">
+        <span>←</span> Retour à l'accueil
+    </a>
+
+    <!-- ===== CONTENEUR PRINCIPAL ===== -->
+    <div class="login-wrapper">
+
+        <!-- Panneau gauche : présentation -->
+        <div class="login-info">
+            <div class="logo-large">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ING<span class="accent">10</span></span>
+            </div>
+            <h1>Bienvenue sur <span class="accent">ING10</span></h1>
+            <p>
+                La plateforme intelligente d'estimation BTP au Cameroun.
+                Connectez-vous pour accéder à vos projets, devis et prix localisés.
+            </p>
+            <ul class="features-list">
+                <li><span>✓</span> Prix actualisés par ville</li>
+                <li><span>✓</span> Calcul automatique du métré</li>
+                <li><span>✓</span> Génération de devis PDF</li>
+                <li><span>✓</span> Suivi de vos chantiers</li>
+            </ul>
+        </div>
+
+        <!-- Panneau droit : formulaire -->
+        <div class="login-form-container">
+            <div class="form-header">
+                <h2>Connexion</h2>
+                <p>Accédez à votre espace ING10</p>
+            </div>
+
+            <!-- Messages d'erreur -->
+            <div id="error-msg" class="alert alert-error"></div>
+            <div id="success-msg" class="alert alert-success"></div>
+
+            <form id="login-form" autocomplete="off">
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email">Adresse email</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">📧</span>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="votre.email@exemple.cm"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Mot de passe -->
+                <div class="input-group">
+                    <label for="password">Mot de passe</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🔒</span>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="••••••••"
+                            required
+                        >
+                        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                    </div>
+                </div>
+
+                <!-- Rôle -->
+                <div class="input-group">
+                    <label for="role">Je me connecte en tant que</label>
+                    <div class="roles-selector">
+                        <label class="role-option">
+                            <input type="radio" name="role" value="ingenieur" checked>
+                            <span class="role-card">
+                                <span class="role-icon">👷</span>
+                                <span>Ingénieur</span>
+                            </span>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="admin">
+                            <span class="role-card">
+                                <span class="role-icon">🛠️</span>
+                                <span>Admin</span>
+                            </span>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="client">
+                            <span class="role-card">
+                                <span class="role-icon">👤</span>
+                                <span>Client</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember">
+                        <span>Se souvenir de moi</span>
+                    </label>
+                    <a href="#" class="forgot-link">Mot de passe oublié ?</a>
+                </div>
+
+                <!-- Bouton submit -->
+                <button type="submit" class="btn-submit" id="btn-submit">
+                    <span class="btn-text">Se connecter</span>
+                    <span class="btn-loader"></span>
+                </button>
+
+            </form>
+
+            <!-- Lien inscription -->
+            <div class="form-footer">
+                <p>Pas encore de compte ? <a href="register.html">Créer un compte</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== DÉCORATIONS ===== -->
+    <div class="decoration deco-1"></div>
+    <div class="decoration deco-2"></div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

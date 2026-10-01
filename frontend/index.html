@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ING10 — L'estimation BTP intelligente au Cameroun</title>
+    <link rel="stylesheet" href="css/style.css">
+...
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🏗️</span>
+            <span class="logo-text">ING<span class="accent">10</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#villes">Villes</a></li>
+            <li><a href="login.html" class="btn-login">Connexion</a></li>
+        </ul>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <header class="hero" id="accueil">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">
+                Estimez votre <span class="accent">chantier</span><br>
+                en quelques clics
+            </h1>
+            <p class="fade-in-delay">
+                ING10 calcule automatiquement le coût du gros œuvre,
+                de la fondation à la toiture, selon les prix réels
+                de <strong>Douala</strong>, <strong>Yaoundé</strong>,
+                <strong>Ngaoundéré</strong> et <strong>Bafoussam</strong>.
+            </p>
+            <div class="hero-buttons fade-in-delay2">
+                <a href="dashboard.html" class="btn btn-primary">
+                    🚀 Lancer une estimation
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    Découvrir les modules
+                </a>
+            </div>
+        </div>
+
+        <!-- Statistiques flottantes -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3 data-count="4">0</h3>
+                <p>Villes couvertes</p>
+            </div>
+            <div class="stat-card">
+                <h3 data-count="120">0</h3>
+                <p>Matériaux référencés</p>
+            </div>
+            <div class="stat-card">
+                <h3 data-count="15">0</h3>
+                <p>Fournisseurs partenaires</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+        <h2 class="section-title">Nos <span class="accent">modules</span></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧱</div>
+                <h3>Fondation</h3>
+                <p>Fouilles, béton de propreté, semelles, ferraillage.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Élévation</h3>
+                <p>Murs en blocs, poteaux, poutres, chaînage.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Finition</h3>
+                <p>Enduits, peinture, carrelage, menuiserie.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Toiture</h3>
+                <p>Charpente, couverture, zinguerie.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VILLES ===== -->
+    <section class="villes" id="villes">
+        <h2 class="section-title">Prix <span class="accent">localisés</span></h2>
+        <p class="section-sub">Chaque ville a ses propres tarifs. ING10 s'adapte.</p>
+        <div class="villes-grid">
+            <div class="ville-card">
+                <h3>Douala</h3>
+                <p>Littoral</p>
+                <span class="badge">COGENI disponible</span>
+            </div>
+            <div class="ville-card">
+                <h3>Yaoundé</h3>
+                <p>Centre</p>
+                <span class="badge">Maison DG Sarl</span>
+            </div>
+            <div class="ville-card">
+                <h3>Ngaoundéré</h3>
+                <p>Adamaoua</p>
+                <span class="badge">Prix ajustés</span>
+            </div>
+            <div class="ville-card">
+                <h3>Bafoussam</h3>
+                <p>Ouest</p>
+                <span class="badge">Prix ajustés</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>© 2025 <strong>ING10</strong> — L'estimation BTP intelligente au Cameroun 🇨🇲</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

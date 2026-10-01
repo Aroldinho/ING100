@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix matériaux — ING10</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/prix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<aside class="sidebar">
+    <div class="logo">
+        <span>🏗️</span>
+        <span class="logo-text">ING<span class="accent">10</span></span>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item"><span class="nav-icon">📊</span> Tableau de bord</a>
+        <a class="nav-item active"><span class="nav-icon">💰</span> Prix matériaux</a>
+        <a href="#" class="nav-item"><span class="nav-icon">📄</span> Mes devis</a>
+        <a href="#" class="nav-item"><span class="nav-icon">🏗️</span> Projets</a>
+        <a href="#" class="nav-item"><span class="nav-icon">👥</span> Clients</a>
+        <a href="#" class="nav-item"><span class="nav-icon">⚙️</span> Paramètres</a>
+    </nav>
+    <div class="sidebar-footer">
+        <div class="user-info">
+            <div class="avatar" id="avatar">--</div>
+            <div>
+                <strong id="userName">…</strong>
+                <span id="userRole">—</span>
+            </div>
+        </div>
+        <button class="btn-logout" onclick="logout()">🚪 Déconnexion</button>
+    </div>
+</aside>
+
+<main class="main-content">
+    <header class="topbar">
+        <button class="burger" onclick="toggleSidebar()">☰</button>
+        <div>
+            <h1>Prix des <span class="accent">matériaux</span></h1>
+            <p style="color:#888;font-size:0.9rem;margin-top:5px;">Comparez les prix par ville au Cameroun</p>
+        </div>
+    </header>
+
+    <!-- Barre de recherche -->
+    <section class="search-card">
+        <div class="search-row">
+            <div class="input-group">
+                <label for="searchInput">Rechercher un matériau</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Ex : ciment, sable, gravier, fer…">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="villeSelect">Ville</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">📍</span>
+                    <select id="villeSelect">
+                        <option value="">Toutes les villes</option>
+                        <option value="Douala">Douala</option>
+                        <option value="Yaoundé">Yaoundé</option>
+                        <option value="Ngaoundéré">Ngaoundéré</option>
+                        <option value="Bafoussam">Bafoussam</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="btnSearch">Rechercher</button>
+        </div>
+    </section>
+
+    <!-- Résultats -->
+    <section class="results">
+        <div class="results-header">
+            <h2>Résultats <span id="resultCount" class="badge-count">0</span></h2>
+            <div class="sort-options">
+                <label>Trier : </label>
+                <select id="sortSelect">
+                    <option value="nom">Nom</option>
+                    <option value="prix-asc">Prix ↑</option>
+                    <option value="prix-desc">Prix ↓</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="prixGrid" class="prix-grid">
+            <div class="loading-state">Chargement des prix…</div>
+        </div>
+    </section>
+
+    <!-- Modale détail prix -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">✕</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+</main>
+
+<script src="js/prix.js"></script>
+</body>
+</html>
